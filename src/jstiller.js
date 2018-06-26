@@ -2867,7 +2867,7 @@ var jstiller = (function() {
         scope.returns = scope.hasOwnProperty("returns") ? ++scope.returns : 1;
 
         debug("ReturnStatement :", (value), (ast.argument))
-        if (value.type === 'SequenceExpression') {
+        if (value && value.type === 'SequenceExpression') {
           ret = {
             type: 'BlockStatement',
             body: []
