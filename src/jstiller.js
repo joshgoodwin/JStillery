@@ -335,7 +335,8 @@ var jstiller = (function() {
       }
     } catch (exc) {
       console.error("[EE]", exc, exc.stack, properties[pO_idx], propObj, proparr);
-      process.exit(1)
+      return (exc);
+      //process.exit(1)
     }
 
     if (natives[getType(latest || propObj)].indexOf(proparr[pa_idx - 1]) !== -1) {
@@ -393,7 +394,8 @@ var jstiller = (function() {
       }
     } catch (exc) {
       console.error("[EE]", exc);
-      process.exit(1)
+      return (exc);
+      //process.exit(1)
     }
     if (propObj[0])
       return propObj[0].parent;
@@ -873,11 +875,13 @@ var jstiller = (function() {
 
         if (!right) {
           debug("NO RIGHT!!");
-          process.exit(1);
+          return new Error("No Right");
+          //process.exit(1);
         }
         if (!left) {
           debug("NO LEFT!!");
-          process.exit(1);
+          return new Error("No Left");
+          //process.exit(1);
         }
         if (left.pure && right.pure && ast.operator in boperators) {
           value = mkliteral(boperators[ast.operator](left.value, right.value))
@@ -1246,7 +1250,8 @@ var jstiller = (function() {
               console.log(exc, ret.left);
               console.log((_tmp));
               console.log((_lval), ret);
-              process.exit(1)
+              return exc;
+              //process.exit(1)
             }
           }
         }
