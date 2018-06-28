@@ -334,7 +334,7 @@ var jstiller = (function() {
         }
       }
     } catch (exc) {
-      console.error("[EE]", exc, exc.stack, properties[pO_idx], propObj, proparr);
+      //console.error("[EE]", exc, exc.stack, properties[pO_idx], propObj, proparr);
       return (exc);
       //process.exit(1)
     }
@@ -393,7 +393,7 @@ var jstiller = (function() {
           break;
       }
     } catch (exc) {
-      console.error("[EE]", exc);
+      //console.error("[EE]", exc);
       return (exc);
       //process.exit(1)
     }
@@ -1247,9 +1247,9 @@ var jstiller = (function() {
               });
               debug("Not Found!!Adding", _lval.properties);
             } catch (exc) {
-              console.log(exc, ret.left);
-              console.log((_tmp));
-              console.log((_lval), ret);
+              //console.log(exc, ret.left);
+              //console.log((_tmp));
+              //console.log((_lval), ret);
               return exc;
               //process.exit(1)
             }
@@ -2011,7 +2011,7 @@ var jstiller = (function() {
                     var vm_returned = vm.runInNewContext("(" + genCode(value) + ")", Object.create(null, ctxt_Obj));
                   }
                 } catch (exc1) {
-                  console.log("EXC", exc1, exc1.stack, genCode(value))
+                  //console.log("EXC", exc1, exc1.stack, genCode(value))
                 }
                 if (!vm_returned || simple_types.indexOf(typeof vm_returned) !== -1)
                   return mkliteral(vm_returned);
@@ -2067,7 +2067,7 @@ var jstiller = (function() {
                   var vm_returned = vm.runInNewContext("(" + genCode(value) + ")", Object.create(null, ctxt_Obj));
                 }
               } catch (exc1) {
-                console.log("EXC", exc1, exc1.stack, genCode(value))
+                //console.log("EXC", exc1, exc1.stack, genCode(value))
               }
               if (!vm_returned || simple_types.indexOf(typeof vm_returned) !== -1)
                 return mkliteral(vm_returned);
@@ -2151,7 +2151,7 @@ var jstiller = (function() {
                   var vm_returned = vm.runInNewContext("(" + genCode(value) + ")", Object.create(null, ctxt_Obj));
                 }
               } catch (exc1) {
-                console.log("EXC", exc1, exc1.stack, genCode(value))
+                //console.log("EXC", exc1, exc1.stack, genCode(value))
               }
               if (!vm_returned || simple_types.indexOf(typeof vm_returned) !== -1) {
                 return mkliteral(vm_returned);
@@ -2175,9 +2175,9 @@ var jstiller = (function() {
                   type: "block",
                   value: "@Info: Executed but got error" + (exc.toString().replace(/\*\//g, ""))
                 })
-              console.log("Error:", exc, ret, exc.stack);
+              //console.log("Error:", exc, ret, exc.stack);
             } catch (exc1) {
-              console.log("Error:", exc1, ret)
+              //console.log("Error:", exc1, ret)
             }
           }
         }
@@ -3223,7 +3223,7 @@ var jstiller = (function() {
       case 'YieldExpression':
         return ast;
       default:
-        console.log('unknown expression type: ' + ast.type);
+        //console.log('unknown expression type: ' + ast.type);
         return ast;
     }
   }
